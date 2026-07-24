@@ -2,7 +2,6 @@ vim.opt.mouse = "a"
 vim.opt.mousemoveevent = true
 
 return
--- 1. Сам Bufferline
 {
   "akinsho/bufferline.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
