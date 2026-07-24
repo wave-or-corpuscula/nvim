@@ -8,16 +8,7 @@ return {
     local util = require("lspconfig.util")
 
     lspconfig.gopls.setup({
-      root_dir = function(fname)
-        local mod_root = util.root_pattern("go.mod", "go.work")(fname)
-
-        if mod_root then return mod_root end
-
-        local go_src_root = util.root_pattern("go.env", "codereview.cfg")(fname)
-        if go_src_root then return go_src_root end
-
-        return util.root_pattern(".git")(fname) or vim.fs.dirname(fname)
-      end,
+      root_dir = util.root_pattern("go.mod", "go.work", ".git"), 
       settings = {
         gopls = {
           ["ui.navigation.importShortcut"] = "Definition",
