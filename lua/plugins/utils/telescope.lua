@@ -16,13 +16,13 @@ return {
         '--line-number',
         '--column',
         '--smart-case',
-        '--hidden',        -- искать в скрытых файлах
-        '--no-ignore',     -- игнорировать .gitignore
-        '--glob', '!.git/*', -- НО не заходить в саму папку .git
-        '--glob', '!.venv/*',      -- исключаем .venv
-        '--glob', '!node_modules/*', -- исключаем node_modules
-        '--glob', '!__pycache__/*',  -- исключаем Python кэш
-        '--glob', '!*.pyc',          -- исключаем скомпилированные Python файлы
+        '--hidden',        
+        '--no-ignore',     
+        '--glob', '!.git/*', 
+        '--glob', '!.venv/*',      
+        '--glob', '!node_modules/*', 
+        '--glob', '!__pycache__/*',  
+        '--glob', '!*.pyc',          
       },
     },
     pickers = {
