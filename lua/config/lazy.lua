@@ -21,9 +21,12 @@ require("config.autocmds")
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { "LazyVim/LazyVim",       import = "lazyvim.plugins" },
     -- import/override with your plugins
-    { import = "plugins" },
+    { import = "plugins.core" },
+    { import = "plugins.ui" },
+    { import = "plugins.utils" },
+    { import = "plugins.lsp" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
