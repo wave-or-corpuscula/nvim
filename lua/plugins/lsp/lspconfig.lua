@@ -1,3 +1,6 @@
+-- rename variable in all places
+vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename variable in all places" })
+
 return {
   "neovim/nvim-lspconfig",
   dependencies = {
@@ -8,12 +11,12 @@ return {
     local util = require("lspconfig.util")
 
     lspconfig.gopls.setup({
-      root_dir = util.root_pattern("go.mod", "go.work", ".git"), 
+      root_dir = util.root_pattern("go.mod", "go.work", ".git"),
       settings = {
         gopls = {
           ["ui.navigation.importShortcut"] = "Definition",
           env = {
-            GOPLS_BOOTSTRAP = "true"
+            GOPLS_BOOTSTRAP = "true",
           },
           analyses = {
             unusedparams = true,
@@ -59,5 +62,5 @@ return {
         },
       },
     })
-  end
+  end,
 }
