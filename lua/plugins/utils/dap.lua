@@ -35,10 +35,18 @@ return {
 
       -- Назначаем горячие клавиши напрямую внутри конфигурации
       vim.keymap.set("n", "<leader>db", function() dap.toggle_breakpoint() end, { desc = "Dap: Breakpoint" })
+
       vim.keymap.set("n", "<leader>dc", function() dap.continue() end, { desc = "Dap: Start / Continue" })
-      vim.keymap.set("n", "<leader>dt", function() dap.terminate() end, { desc = "Dap: Break" })
+      vim.keymap.set("n", "<leader>dB", function() dap.terminate() end, { desc = "Dap: Break" })
       vim.keymap.set("n", "<leader>do", function() dap.step_over() end, { desc = "Dap: Step outside" })
       vim.keymap.set("n", "<leader>di", function() dap.step_into() end, { desc = "Dap: Step inside" })
+
+      -- --- ДУБЛИРУЮЩИЕ КЛАВИШИ (F-клавиши) ---
+      vim.keymap.set("n", "<F5>", function() dap.continue() end, { desc = "Dap: Continue" })
+      vim.keymap.set("n", "<F10>", function() dap.step_over() end, { desc = "Dap: Step over" })
+      vim.keymap.set("n", "<F11>", function() dap.step_into() end, { desc = "Dap: Step into" })
+      vim.keymap.set("n", "<F12>", function() dap.step_out() end, { desc = "Dap: Step out" })
+
     end,
   },
 }
