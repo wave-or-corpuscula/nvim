@@ -44,7 +44,7 @@ return {
       -- --- ДУБЛИРУЮЩИЕ КЛАВИШИ (F-клавиши) ---
       vim.keymap.set("n", "<F5>", function() dap.continue() end, { desc = "Dap: Continue" })
       vim.keymap.set("n", "<F10>", function() dap.step_over() end, { desc = "Dap: Step over" })
-      vim.keymap.set("n", "<F11>", function() dap.step_into() end, { desc = "Dap: Step into" })
+      vim.keymap.set("n", "<F9>", function() dap.step_into() end, { desc = "Dap: Step into" })
       vim.keymap.set("n", "<F12>", function() dap.step_out() end, { desc = "Dap: Step out" })
 
     end,

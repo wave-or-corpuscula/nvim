@@ -62,7 +62,7 @@ return {
         },
       },
     })
-    
+
     lspconfig.lua_ls.setup({
       settings = {
         Lua = {
