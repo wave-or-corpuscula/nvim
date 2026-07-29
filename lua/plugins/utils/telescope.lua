@@ -16,13 +16,13 @@ return {
         '--line-number',
         '--column',
         '--smart-case',
-        '--hidden',        
-        '--no-ignore',     
-        '--glob', '!.git/*', 
-        '--glob', '!.venv/*',      
-        '--glob', '!node_modules/*', 
-        '--glob', '!__pycache__/*',  
-        '--glob', '!*.pyc',          
+        '--hidden',
+        '--no-ignore',
+        '--glob', '!.git/*',
+        '--glob', '!.venv/*',
+        '--glob', '!node_modules/*',
+        '--glob', '!__pycache__/*',
+        '--glob', '!*.pyc',
       },
     },
     pickers = {
@@ -44,13 +44,11 @@ return {
       },
     },
   },
-  keys = {
-    -- Модифицированные функции с передачей аргументов (на всякий случай)
-    { "<leader>ff", function() require("telescope.builtin").find_files() end, desc = "Telescope find files (all)" },
-    { "<leader>fg", function() require("telescope.builtin").live_grep() end, desc = "Telescope live grep (all)" },
-    { "<leader>fG", function() require("telescope.builtin").git_files() end, desc = "Telescope git files" },
-    -- Эти остаются без изменений
-    { "<leader>fb", function() require("telescope.builtin").buffers() end, desc = "Telescope buffers" },
-    { "<leader>fh", function() require("telescope.builtin").help_tags() end, desc = "Telescope help tags" },
-  },
+  config = function()
+    vim.keymap.set("n", "<leader>ff", ":Telescope find_files<CR>", { silent = true, desc = "Telescope find files" })
+    vim.keymap.set("n", "<leader>fg", ":Telescope live_grep<CR>", { silent = true, desc = "Telescope live grep" })
+    vim.keymap.set("n", "<leader>fG", ":Telescope git_files<CR>", { silent = true, desc = "Telescope git files" })
+    vim.keymap.set("n", "<leader>fb", ":Telescope buffers<CR>", { silent = true, desc = "Telescope buffers" })
+    vim.keymap.set("n", "<leader>fh", ":Telescope help_tags<CR>", { silent = true, desc = "Telescope help tags" })
+  end,
 }
