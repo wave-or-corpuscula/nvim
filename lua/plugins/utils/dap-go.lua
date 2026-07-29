@@ -1,3 +1,12 @@
+local function run_all_go_tests()
+  local file_dir = vim.fn.expand('%:p:h')
+  local file_name = vim.fn.expand('%:t')
+  print("Running all tests in: " .. file_dir .. "/" .. file_name)
+
+  vim.cmd("split | terminal go test -C " .. vim.fn.fnameescape(file_dir) .. " -v")
+  vim.cmd("startinsert")
+end
+
 local function run_closest_go_test()
   local current_line = vim.fn.line(".")
   local test_name = nil
@@ -50,6 +59,7 @@ return {
       },
     })
 
+    vim.keymap.set("n", "<leader>ra", run_all_go_tests, { desc = "Go: Run all tests in current file" }) 
     vim.keymap.set("n", "<leader>rt", run_closest_go_test, { desc = "Go: Run nearest go test" })
     vim.keymap.set("n", "<leader>dt", function()
       local original_cwd = vim.fn.getcwd()
