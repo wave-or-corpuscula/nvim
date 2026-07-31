@@ -14,6 +14,7 @@ return {
       root_dir = util.root_pattern("go.mod", "go.work", ".git"),
       settings = {
         gopls = {
+          ["formatting.gofumpt"] = false,
           ["ui.navigation.importShortcut"] = "Definition",
           env = {
             GOPLS_BOOTSTRAP = "true",
