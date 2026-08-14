@@ -2,7 +2,7 @@ return {
   "nvim-neotest/neotest",
   dependencies = {
     "nvim-neotest/neotest-python",
-    "nvim-neotest/neotest-golang",
+    "nvim-neotest/neotest-go",
     "nvim-treesitter/nvim-treesitter",
   },
   config = function()
