@@ -37,17 +37,54 @@ return {
           python = "python3",
         }),
         neotest_golang({
-          go_test_args = { "-v" },
+          go_test_args = { "-count=1", "-v" },
           dap_go_enabled = true,
         }),
       },
-    })  end,
+    })
+  end,
   keys = {
-    { "<leader>tr", function() require("neotest").run.run() end, desc = "Run nearest test" },
-    { "<leader>tf", function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run all tests in file" },
-    { "<leader>td", function() require("neotest").run.run({ strategy = "dap" }) end, desc = "Debug nearest test" },
-    { "<leader>to", function() require("neotest").output.open() end, desc = "Open test output" },
-    { "<leader>ts", function() require("neotest").summary.toggle() end, desc = "Toggle test summary" },
-    { "<leader>tw", function() require("neotest").watch.toggle() end, desc = "Toggle auto-run tests" },
+    {
+      "<leader>tr",
+      function()
+        require("neotest").run.run()
+      end,
+      desc = "Run nearest test",
+    },
+    {
+      "<leader>tf",
+      function()
+        require("neotest").run.run(vim.fn.expand("%"))
+      end,
+      desc = "Run all tests in file",
+    },
+    {
+      "<leader>td",
+      function()
+        require("neotest").run.run({ strategy = "dap" })
+      end,
+      desc = "Debug nearest test",
+    },
+    {
+      "<leader>to",
+      function()
+        require("neotest").output.open()
+      end,
+      desc = "Open test output",
+    },
+    {
+      "<leader>ts",
+      function()
+        require("neotest").summary.toggle()
+      end,
+      desc = "Toggle test summary",
+    },
+    {
+      "<leader>tw",
+      function()
+        require("neotest").watch.toggle()
+      end,
+      desc = "Toggle auto-run tests",
+    },
   },
 }
